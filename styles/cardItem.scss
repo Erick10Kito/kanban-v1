@@ -1,0 +1,94 @@
+.AroundCardGeral {
+  padding: 0.75rem;
+  margin: 0.75rem;
+  margin-top: 0;
+  background-color: #ffffff;
+  border-radius: 0.375rem;
+
+  .LabelPriorityCardGreen {
+    background-color: #059669;
+  }
+  .LabelPriorityCardBlue {
+    background-color: #2563eb;
+  }
+  .LabelPriorityCardRed {
+    background-color: #dc2626;
+  }
+  .LabelPriorityCard {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    border-radius: 0.25rem;
+  }
+
+  .TitleCardItemText {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    line-height: 1.5rem;
+  }
+  .InsideAreaCard {
+    display: flex;
+    justify-content: space-between;
+
+    .AroundItensBottomCard {
+      margin-left: 0.5rem;
+      display: flex;
+      align-items: center;
+
+      .spanChatCard {
+        display: flex;
+        margin-left: 0.25rem;
+        display: flex;
+        align-items: center;
+
+        .imgChatIcon {
+          color: #6b7280;
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+
+      .SpanAttachmentCard {
+        display: flex;
+        margin-left: 0.25rem;
+        display: flex;
+        align-items: center;
+
+        .ImgAttachmentICon {
+          color: #6b7280;
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+    }
+  }
+
+  .ListCardBottom {
+    margin-left: 0.75rem;
+    margin-left: 0.875rem;
+    display: flex;
+
+    .ButtonListCardBottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 9999px;
+      border-width: 1px;
+      border-color: #6b7280;
+      border-style: dashed;
+
+      .IconButtonListCardBottom {
+        color: #6b7280;
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+  }
+}

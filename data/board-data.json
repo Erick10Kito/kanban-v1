@@ -1,0 +1,36 @@
+[
+  {
+    "name": "A Fazer",
+    "items": [
+      {
+        "id": 1,
+        "priority": 0,
+        "title": "Taxi Carrara ou Carrara Taxi",
+        "cnpj": "12.123.123/1234-12",
+        "porte": 3,
+        "chat": 1,
+        "attachment": 2,
+        "info": [
+          {
+            "capital-social": 10000,
+            "telefone": 32956620,
+            "email": "imedia@imediacomunicacao.com.br",
+            "endereço": "Praça Antonio Carlos, 02, Centro"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Em Andamento",
+    "items": []
+  },
+  {
+    "name": "Em Revisão",
+    "items": []
+  },
+  {
+    "name": "Concluído",
+    "items": []
+  }
+]
