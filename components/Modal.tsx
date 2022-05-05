@@ -1,43 +1,75 @@
-import React, { useState } from 'react'
+import * as React from 'react'
+import Backdrop from '@mui/material/Backdrop'
+import Box from '@mui/material/Box'
+import Modal from '@mui/material/Modal'
+import Fade from '@mui/material/Fade'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import { IBoardItem } from '../pages'
 
-export default function Modal() {
-  const [modal, setModal] = useState(false)
+const style = {
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+}
+export interface IOnlyData {
+  data: IBoardItem
+}
 
-  const toggleModal = () => {
-    setModal(!modal)
-  }
-
-  if (modal) {
-    document.body.classList.add('active-modal')
-  } else {
-    document.body.classList.remove('active-modal')
-  }
+export default function TransitionsModal({ data }: IOnlyData) {
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   return (
-    <>
-      <button onClick={toggleModal} className="btn-modal">
-        + info
-      </button>
-
-      {modal && (
-        <div className="modal">
-          <div onClick={toggleModal} className="overlay"></div>
-          <div className="modal-content">
-            <h2>Corinthians</h2>
-            <p>
-              Salve o Corinthians, O campeão dos campeões. Eternamente, Dentro
-              dos nossos corações. Salve o Corinthians, De tradições e glórias
-              mil. Tu és o orgulho, Dos esportistas do Brasil Teu passado é uma
-              bandeira, Teu presente, uma lição. Figuras entre os primeiros Do
-              nosso esporte bretão. Corinthians grande, Sempre altaneiro. És do
-              Brasil, O clube mais brasileiro!
-            </p>
-            <button className="close-modal" onClick={toggleModal}>
+    <div>
+      <Button onClick={handleOpen}>+ Info</Button>
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <Box sx={style}>
+            <button className="close-modal" onClick={handleClose}>
               X
             </button>
-          </div>
-        </div>
-      )}
-    </>
+            <ul>
+              <h2 className="TitleModalInfo">{data.title}</h2>
+              {data.infos?.map((info, key) => {
+                return (
+                  <li key={key}>
+                    <Typography
+                      id="transition-modal-description"
+                      sx={{ mt: 2 }}
+                    >
+                      Capital Social: {info.capitalSocial}
+                      <br />
+                      Telefone: {info.telefone}
+                      <br />
+                      Email: {info.email}
+                      <br />
+                      Endereço: {info.endereço}
+                    </Typography>
+                  </li>
+                )
+              })}
+            </ul>
+          </Box>
+        </Fade>
+      </Modal>
+    </div>
   )
 }

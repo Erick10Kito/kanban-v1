@@ -14,16 +14,25 @@ import { Menu, MenuItem, MenuButton } from '@szhsin/react-menu'
 import '@szhsin/react-menu/dist/index.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 
-interface IBoardItem {
+export interface IModalInfo {
+  capitalSocial: number
+  telefone: number
+  email: string
+  endereço: string
+}
+
+export interface IBoardItem {
   id?: number
   priority?: number
   title?: string
   chat?: number
   attachment?: number
-  info?: any[]
+  cnpj?: string
+  porte?: number
+  infos?: IModalInfo[]
 }
 
-interface IBoardData {
+export interface IBoardData {
   name: string
   items: IBoardItem[]
 }
